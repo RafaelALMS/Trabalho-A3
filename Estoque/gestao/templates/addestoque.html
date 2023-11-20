@@ -1,24 +1,60 @@
-{% csrf_token %}
+
 <!DOCTYPE html>
 <html>
+    
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>ESTOQUE</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="./Style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+        <link rel="stylesheet" href="assets/css/style.css">
     </head>
     <body>
         
         <h2>ADICIONAR ESTOQUE</h2>
-        <form action="" method="post">
-            <h6>PRODUTO{{form.proNome}}</h6>
-            {{form.quanEsto}}
-            {{form.funci}}
+        <form action="" method="post">{% csrf_token %}
             
-            <button  type="submit">SALVAR</button>
+
+                <div class="caixatexto">
+                    <span> PRODUTO</span>
+                <input type="text" required="required" {{form.proNome}}>
+            </div>
+
+            <div class="caixatexto">
+                <span>QUANTIDADE</span>
+                <input type="text" required="required" {{form.quanEsto}}>
+            </div>
+            <div class="">
+                {{form.funci}}
+            </div>
+                
+                
+                
+            <button class="botao_add" type="submit">ADICIONAR</button>
         </form>
-        <script src="" async defer></script>
+        
+
+
+        <!--Inicio footer-->
+        <div class="footer-basic">
+            <footer>
+                <div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-facebook"></i></a></div>
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="./index.html">Home</a></li>
+                    <li class="list-inline-item"><a href="#">Pagina 2</a></li>
+                    <li class="list-inline-item"><a href="#">Pagina 3</a></li>
+                    
+                </ul>
+                <p class="copyright">Matheus Rende Ribeiro dos Santos || Rafael Almeida da Silva || Henrique Duarte Blaschke
+                </div></p>
+            </footer>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+        <!--Termino footer-->
     </body>
 </html>
