@@ -14,5 +14,6 @@ class estoque(models.Model):
     quanEsto= models.PositiveIntegerField(default=0)
     funci = models.ForeignKey(Funci, on_delete=models.CASCADE,null=True)
     def __str__(self):
+        
         return self.proNome
     

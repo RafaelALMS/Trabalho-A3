@@ -1,7 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render , redirect
 from django.http import HttpResponse
 from .forms import AD_Funci, AD_Estoque
 from gestao.models import Funci, estoque
+
 # Create your views here.
 
 
@@ -49,4 +50,16 @@ def add_Estoque(request):#Coloca produtos no estoque
     return render(request,'addestoque.html',context)
 
 
+def update(request, pk):
+    data={}
+    update_estoque= estoque.objects.get(idSto=pk)
+    form = AD_Estoque(request.POST or None,instance=update_estoque)
     
+    if form.is_valid():
+            form.save()
+            return redirect('Adcionar_Estoque/')
+
+
+    data['form']=form
+    context=context={'request':request, 'form':form,'data':data}             
+    return render(request,'addestoque.html',context)

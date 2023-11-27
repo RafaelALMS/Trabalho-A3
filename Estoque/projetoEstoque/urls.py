@@ -16,12 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from gestao.views import Hellowold, crud, add_Funci,add_Estoque
+from gestao.views import Hellowold, crud, add_Funci,add_Estoque,update
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("holla/",Hellowold),
     path('Adcionar_Funcionario/',add_Funci),
     path('Adcionar_Estoque/',add_Estoque),
+    path('update/<int:pk>',update),
     path('',crud)
 ]
